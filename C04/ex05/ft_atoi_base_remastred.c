@@ -1,17 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 21:43:19 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/23 17:27:26 by ynabouzi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <stdio.h>
-#include <unistd.h>
 
 int	ft_strlen(char *str)
 {
@@ -71,34 +58,46 @@ int	ft_pow(int num, int exponant)
 		return (num * ft_pow(num, exponant - 1));
 }
 
+int	*check_str(char *str, int *res)
+{
+	int	i;
+	int	minus_count;
+
+	i = 0;
+	minus_count = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13) || str[i] == '-'
+		|| str[i] == '+')
+	{
+		if (str[i] == '-')
+			minus_count++;
+		i++;
+	}
+	if (minus_count % 2 != 0)
+		res[1] = -1;
+	res[0] = i;
+	return (res);
+}
+
 int	ft_atoi_base(char *str, char *base)
 {
 	int	len_str;
 	int	num;
 	int	len_base;
 	int	j;
-	int	minus_count;
+	int	y[2] = {0,1};
 
+	check_str(str,y);
 	j = 0;
 	len_str = ft_strlen(str) - 1;
 	len_base = ulticheck(base);
 	num = 0;
-	minus_count = 0;
-	while (str[j] == '-' || str[j] == '+')
-	{
-		if (str[j] == '-')
-			minus_count++;
-		j++;
-	}
-	if (minus_count % 2 != 0)
-		minus_count = -1;
-	while (len_str >= j && len_base > 1)
+	while (len_str >= y[0] && len_base > 1)
 	{
 		num = num + index_of(base, str[j]) * ft_pow(len_base, len_str);
 		len_str--;
 		j++;
 	}
-	return (num * minus_count);
+	return (num * y[1]);
 }
 
 int	main(void)
@@ -113,6 +112,6 @@ int	main(void)
 	// 	i--;
 	// }
 	// printf("%d",ft_pow(5,-1));
-	printf("%d", ft_atoi_base("101", "01"));
+	printf("%d", ft_atoi_base("-110", "01"));
 	// printf("%d",ft_pow(3,4));
 }

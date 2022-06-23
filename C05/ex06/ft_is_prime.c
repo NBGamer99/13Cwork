@@ -3,56 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynabouzi <ynabouzi@student.1337.ma >       +#+  +:+       +#+        */
+/*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/23 03:17:52 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/23 03:17:52 by ynabouzi         ###   ########.fr       */
+/*   Created: 2022/06/23 18:27:42 by ynabouzi          #+#    #+#             */
+/*   Updated: 2022/06/23 18:27:42 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 int	check_perfect(int nb)
 {
-	int	i;
+	int i;
 
 	i = 2;
 	while (i <= 46340 && i * i < nb)
 		i++;
-	if (i * i == nb)
-		return (i);
-	else
-		return (0);
+	return (i);
 }
 
-int	ft_sqrt(int nb)
-{
-	if (nb < 0)
-		return (0);
-	else if (nb == 1)
-		return (1);
-	else
-		return (check_perfect(nb));
-}
-
-int ft_is_prime(int nb)
+int	ft_is_prime(int nb)
 {
 	int i;
 
 	i = 2;
 	if (nb <= 1)
-		return 0;
-	while (i <= ft_sqrt(nb))
+		return (0);
+	while (i <= check_perfect(nb))
 	{
 		if (nb % i == 0)
-			return 0;
+			return (0);
 		i++;
 	}
 
-	return 1;
+	return (1);
 }
 
 #include <stdio.h>
-int main()
+int	main(void)
 {
-	int i = 10;
-printf("is this %d really a prime number ? %d ",i,ft_is_prime(i));
+	int i = 0;
+	while (i < 100)
+	{
+		printf("is this %d really a prime number ? %d\n", i, ft_is_prime(i));
+		i++;
+	}
 }
