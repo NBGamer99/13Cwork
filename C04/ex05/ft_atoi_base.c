@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ynabouzi <ynabouzi@student.1337.ma >       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 21:43:19 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/22 14:50:07 by ynabouzi         ###   ########.fr       */
+/*   Updated: 2022/06/23 03:04:22 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	ulticheck(char *base)
 
 int	ft_pow(int num, int exponant)
 {
-	if (exponant == 0)
+	if (exponant == 0 || num == 1)
 		return (1);
 	else if (exponant < 0)
 		return (0);
@@ -71,7 +71,7 @@ int	ft_pow(int num, int exponant)
 		return (num * ft_pow(num, exponant - 1));
 }
 
-int	check_str(char *str)
+int	*check_str(char *str, int *res)
 {
 	int	i;
 	int	minus_count;
@@ -86,8 +86,9 @@ int	check_str(char *str)
 		i++;
 	}
 	if (minus_count % 2 != 0)
-		write (1, "-", 1);
-	return (i);
+		res[1] = -1;
+	res[0] = i;
+	return (res);
 }
 
 int	ft_atoi_base(char *str, char *base)
@@ -96,20 +97,20 @@ int	ft_atoi_base(char *str, char *base)
 	int	num;
 	int	len_base;
 	int	j;
-	int	y;
+	int	y[2] = {0,1};
 
-	y = check_str(str);
+	check_str(str,y);
 	j = 0;
 	len_str = ft_strlen(str) - 1;
 	len_base = ulticheck(base);
 	num = 0;
-	while (len_str >= y && len_base > 1)
+	while (len_str >= y[0] && len_base > 1)
 	{
 		num = num + index_of(base, str[j]) * ft_pow(len_base, len_str);
 		len_str--;
 		j++;
 	}
-	return (num);
+	return (num * y[1]);
 }
 
 int	main(void)
@@ -124,6 +125,6 @@ int	main(void)
 	// 	i--;
 	// }
 	// printf("%d",ft_pow(5,-1));
-	printf("%d", ft_atoi_base("-1001", "01"));
+	printf("%d", ft_atoi_base("101", "01"));
 	// printf("%d",ft_pow(3,4));
 }

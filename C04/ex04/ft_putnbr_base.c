@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ynabouzi <ynabouzi@student.1337.ma >       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 20:05:41 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/22 14:38:01 by ynabouzi         ###   ########.fr       */
+/*   Updated: 2022/06/23 02:45:44 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,5 @@ void	ft_putnbr_base(int nbr, char *base)
 
 int	main(void)
 {
-	ft_putnbr_base(69, "nice");
+	ft_putnbr_base(5, "01");
 }
