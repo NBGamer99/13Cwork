@@ -6,7 +6,7 @@
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 20:33:38 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/23 18:28:19 by ynabouzi         ###   ########.fr       */
+/*   Updated: 2022/06/23 23:23:49 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int	ft_sqrt(int nb)
 		return (check_perfect(nb));
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	printf("%d", ft_sqrt(2147395600));
-}
+// int	main(void)
+// {
+// 	printf("%d", ft_sqrt(2147395600));
+// }

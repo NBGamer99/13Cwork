@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynabouzi <ynabouzi@student.1337.ma >       +#+  +:+       +#+        */
+/*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 20:05:41 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/23 02:45:44 by ynabouzi         ###   ########.fr       */
+/*   Updated: 2022/06/23 22:20:32 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,20 +55,23 @@ int	ulticheck(char *base)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int	len;
+	int		len;
+	long	l;
 
+	l = nbr;
 	len = ulticheck(base);
 	if (len != 0)
 	{
 		if (nbr < 0)
 		{
 			put_char('-');
-			ft_putnbr_base(-nbr, base);
+			l = -l;
+			ft_putnbr_base((l / len), base);
+			ft_putnbr_base((l % len), base);
 		}
 		else if (nbr / len == 0)
 		{
 			put_char(base[nbr % len]);
-			return ;
 		}
 		else if (nbr / len != 0)
 		{
@@ -80,5 +83,5 @@ void	ft_putnbr_base(int nbr, char *base)
 
 int	main(void)
 {
-	ft_putnbr_base(5, "01");
+	ft_putnbr_base(-2, "01");
 }

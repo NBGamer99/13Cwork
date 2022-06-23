@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi_base_remastred.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/23 18:37:53 by ynabouzi          #+#    #+#             */
+/*   Updated: 2022/06/23 21:54:44 by ynabouzi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
 int	ft_strlen(char *str)
@@ -84,9 +96,10 @@ int	ft_atoi_base(char *str, char *base)
 	int	num;
 	int	len_base;
 	int	j;
-	int	y[2] = {0,1};
+	int	y[2];
 
-	check_str(str,y);
+	y[2] = {0, 1};
+	check_str(str, y);
 	j = 0;
 	len_str = ft_strlen(str) - 1;
 	len_base = ulticheck(base);
@@ -98,20 +111,4 @@ int	ft_atoi_base(char *str, char *base)
 		j++;
 	}
 	return (num * y[1]);
-}
-
-int	main(void)
-{
-	// char test[] = "abcde";
-	// printf("%d",index_of(test,'f'));
-	// int i = ft_strlen(test) - 1;
-	// printf("i = %d\n",i);
-	// while (i >= 0)
-	// {
-	// 	printf("%c",test[i]);
-	// 	i--;
-	// }
-	// printf("%d",ft_pow(5,-1));
-	printf("%d", ft_atoi_base("-110", "01"));
-	// printf("%d",ft_pow(3,4));
 }
