@@ -2,9 +2,12 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_sort_params.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ynabouzi <ynabouzi@student.1337.ma >       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+
+	+:+     */
+/*   By: ynabouzi <ynabouzi@student.1337.ma >       +#+  +:+
+	+#+        */
+/*                                                +#+#+#+#+#+
+	+#+           */
 /*   Created: 2022/06/24 13:11:20 by ynabouzi          #+#    #+#             */
 /*   Updated: 2022/06/24 13:11:20 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
@@ -19,7 +22,7 @@ void	ft_putchar(char c)
 
 void	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -29,9 +32,9 @@ void	ft_putstr(char *str)
 	}
 }
 
-int		ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while ((s1[i] == s2[i]) && (s1[i] != '\0' && s2[i] != '\0'))
@@ -39,7 +42,7 @@ int		ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-int	main(int ac, char** av)
+int	main(int ac, char **av)
 {
 	char	*temp;
 	int		zidkaleb;
@@ -52,7 +55,7 @@ int	main(int ac, char** av)
 		i = 1;
 		while (i < ac - 1)
 		{
-			if (ft_strcmp(av[i],av[i + 1]) > 0)
+			if (ft_strcmp(av[i], av[i + 1]) > 0)
 			{
 				temp = av[i];
 				av[i] = av[i + 1];
@@ -63,10 +66,11 @@ int	main(int ac, char** av)
 		}
 	}
 	i = 1;
-	while (i < ac){
+	while (i < ac)
+	{
 		ft_putstr(av[i]);
 		ft_putchar('\n');
 		i++;
 	}
-	return 0;
+	return (0);
 }

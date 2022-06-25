@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynabouzi <ynabouzi@student.1337.ma >       +#+  +:+       +#+        */
+/*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 23:37:47 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/24 13:08:44 by ynabouzi         ###   ########.fr       */
+/*   Updated: 2022/06/25 13:42:14 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@ void	ft_putchar(char c)
 
 int	main(int ac, char **av)
 {
-	int	i;
-	int	j;
-	char *str;
+	int		i;
+	int		j;
+	char	*str;
 
-	// str = NULL;
-	j = 0;
 	i = ac - 1;
 	if (ac >= 2)
 	{

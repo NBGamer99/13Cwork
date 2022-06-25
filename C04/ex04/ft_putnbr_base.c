@@ -6,7 +6,7 @@
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 20:05:41 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/23 22:20:32 by ynabouzi         ###   ########.fr       */
+/*   Updated: 2022/06/25 19:01:18 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,18 +66,14 @@ void	ft_putnbr_base(int nbr, char *base)
 		{
 			put_char('-');
 			l = -l;
-			ft_putnbr_base((l / len), base);
-			ft_putnbr_base((l % len), base);
 		}
-		else if (nbr / len == 0)
+		if (l > 9)
 		{
-			put_char(base[nbr % len]);
+			ft_putnbr_base(l / len, base);
+			ft_putnbr_base(l % len, base);
 		}
-		else if (nbr / len != 0)
-		{
-			ft_putnbr_base(nbr / len, base);
-			put_char(base[nbr % len]);
-		}
+		else
+			put_char(base[l % len]);
 	}
 }
 

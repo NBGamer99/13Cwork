@@ -1,52 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_stdup.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 18:59:12 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/25 19:01:25 by ynabouzi         ###   ########.fr       */
+/*   Created: 2022/06/25 15:08:37 by ynabouzi          #+#    #+#             */
+/*   Updated: 2022/06/25 15:25:36 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-void	put_char(char str)
-{
-	write(1, &str, 1);
-}
-
-int	ft_atoi(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
-	int	n;
-	int	m;
-	int	sign;
 
 	i = 0;
-	n = 0;
-	m = 0;
-	sign = 1;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	while (str[i] != '\0')
 		i++;
-	while (str[i] == '-' || str[i] == '+')
+	return (i);
+}
+
+char	*ft_strdup(char *src)
+{
+	int		len;
+	char	*dup;
+
+	len = ft_strlen(src);
+	dup = (char *)malloc(sizeof(char) * len);
+	while (len >= 0)
 	{
-		if (str[i] == '-')
-			sign = -sign;
-		i++;
+		dup[len] = src[len];
+		len--;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		m = str[i] - 48;
-		n = n * 10;
-		n = n + m;
-		i++;
-	}
-	return (n * sign);
+	return (dup);
 }
 
 int	main(void)
 {
-	printf("%d", ft_atoi("   -- -+--+1234ab567"));
+	char	dest[10] = "hello";
+	char	*dup;
+
+	dup = ft_strdup(dest);
+	free(dup);
+	printf("adress of original [%s] ==> %p\naddress of dup [%s] ==> %p\n",dest,dest,dup,dup);
 }

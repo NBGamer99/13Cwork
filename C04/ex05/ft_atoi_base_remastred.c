@@ -6,7 +6,7 @@
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 18:37:53 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/23 21:54:44 by ynabouzi         ###   ########.fr       */
+/*   Updated: 2022/06/25 13:02:28 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,4 +111,19 @@ int	ft_atoi_base(char *str, char *base)
 		j++;
 	}
 	return (num * y[1]);
+}
+int	main(void)
+{
+	// char test[] = "abcde";
+	// printf("%d",index_of(test,'f'));
+	// int i = ft_strlen(test) - 1;
+	// printf("i = %d\n",i);
+	// while (i >= 0)
+	// {
+	// 	printf("%c",test[i]);
+	// 	i--;
+	// }
+	// printf("%d",ft_pow(5,-1));
+	printf("%d", ft_atoi_base("101", "01"));
+	// printf("%d",ft_pow(3,4));
 }
