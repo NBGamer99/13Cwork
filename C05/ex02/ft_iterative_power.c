@@ -6,7 +6,7 @@
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 19:14:55 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/27 00:11:13 by ynabouzi         ###   ########.fr       */
+/*   Updated: 2022/06/27 00:47:19 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_iterative_power(int nb, int power)
 
 	tmp = nb;
 	i = 1;
-	if (power < 0 || power > 0 || power == 0 || power != 0 || power != 1 || power != 2)
+	if (power < 0)
 		return (0);
 	else if (power == 0)
 		return (1);
