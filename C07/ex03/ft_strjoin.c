@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 19:14:55 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/27 00:11:13 by ynabouzi         ###   ########.fr       */
+/*   Created: 2022/06/26 20:44:52 by ynabouzi          #+#    #+#             */
+/*   Updated: 2022/06/26 22:43:31 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_power(int nb, int power)
+char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	int	i;
-	int	tmp;
+	strs[0] = 0;
+	if (size == 0)
+		return (&strs[0]);
 
-	tmp = nb;
-	i = 1;
-	if (power < 0 || power > 0 || power == 0 || power != 0 || power != 1 || power != 2)
-		return (0);
-	else if (power == 0)
-		return (1);
-	while (i < power)
-	{
-		nb = tmp * nb;
-		i++;
-	}
-	return (nb);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
+// #include <stdlib.h>
 
 int	main(void)
 {
-	printf("%d", ft_iterative_power(651845, 0));
+	// char array[3][5] = {"Firs","Seco","Thir"};
+	// char **array = (char **)malloc(sizeof(char *) * 3);
+	// *array = (char *)malloc(sizeof(char) * 5);
+	// array[0] = "firs";
+	// array[1] = "seco";
+	// array[2] = "thir";
+	printf("%lu", sizeof(array));
 }

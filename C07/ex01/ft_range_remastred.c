@@ -1,49 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stdup.c                                         :+:      :+:    :+:   */
+/*   ft_range_remastred.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/25 15:08:37 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/26 20:10:36 by ynabouzi         ###   ########.fr       */
+/*   Created: 2022/06/26 18:03:03 by ynabouzi          #+#    #+#             */
+/*   Updated: 2022/06/26 18:42:43 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+int	*ft_range(int min, int max)
 {
 	int	i;
+	int	*a;
 
+	if (min >= max)
+		return (NULL);
 	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(char *src)
-{
-	int		len;
-	char	*dup;
-
-	len = ft_strlen(src);
-	dup = (char *)malloc(sizeof(char) * len);
-	while (len >= 0)
+	a = malloc(sizeof(int) * (max - min));
+	if (a == NULL)
+		return (NULL);
+	while (i < (max - min))
 	{
-		dup[len] = src[len];
-		len--;
+		a[i] = min + i;
+		i++;
 	}
-	return (dup);
+	return (a);
 }
 
 int	main(void)
 {
-	char	dest[10] = "hello";
-	char	*dup;
+	int	i;
+	int	start;
+	int	end;
+	int	direction;
+	int	*tab;
 
-	dup = ft_strdup(dest);
-	free(dup);
-	printf("adress of original [%s] ==> %p\naddress of dup [%s] ==> %p\n",dest,dest,dup,dup);
+	i = 0;
+	start = -5;
+	end = 10;
+	direction = 0;
+	// direction = end > start ? 1 : -1;
+	tab = ft_range(start, end);
+	// printf("%p, ", &tab);
+	while (i < (end - start))
+	{
+		printf("%d, ", tab[i]);
+		i++;
+	}
 }

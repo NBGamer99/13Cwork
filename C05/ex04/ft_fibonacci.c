@@ -26,5 +26,9 @@ int	ft_fibonacci(int index)
 
 int main()
 {
-	printf("%d",ft_fibonacci(9));
+	int i = 0;
+	while (i < 50){
+		printf("%d\n",ft_fibonacci(i));
+		i++;
+	}
 }

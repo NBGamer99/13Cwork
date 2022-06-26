@@ -6,7 +6,7 @@
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 20:54:10 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/25 21:10:25 by ynabouzi         ###   ########.fr       */
+/*   Updated: 2022/06/26 17:59:26 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,5 @@ int	ft_find_next_prime(int nb)
 
 int main()
 {
-	printf("%d", ft_find_next_prime(1021));
+	printf("%d", ft_find_next_prime(1022));
 }
