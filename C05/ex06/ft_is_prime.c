@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/25 19:05:15 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/25 19:05:15 by ynabouzi         ###   ########.fr       */
+/*   Created: 2022/06/25 20:50:11 by ynabouzi          #+#    #+#             */
+/*   Updated: 2022/06/25 20:50:11 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@ int	check_perfect(int nb)
 	int	i;
 
 	i = 2;
+	if (nb == 2)
+		return (1);
 	while (i <= 46340 && i * i < nb)
 		i++;
 	return (i);
@@ -36,4 +38,18 @@ int	ft_is_prime(int nb)
 		i++;
 	}
 	return (1);
+}
+
+#include <stdio.h>
+
+int	main(void)
+{
+	int i = 0;
+	while (i < 1000)
+	{
+	    if (ft_is_prime(i) == 1)
+	        printf("%d\n", i);
+	    i++;
+	}
+	// printf("%d", ft_is_prime(2));
 }
