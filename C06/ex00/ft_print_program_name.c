@@ -6,7 +6,7 @@
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 18:38:28 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/28 01:13:22 by ynabouzi         ###   ########.fr       */
+/*   Updated: 2022/06/28 18:21:40 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int	main(int ac, char **av)
 		ft_putchar(av[0][i]);
 		i++;
 	}
-	
+	ft_putchar('\n');
 }

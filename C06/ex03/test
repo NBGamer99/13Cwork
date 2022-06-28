@@ -1,4 +1,0 @@
-"$program" => "",
-"$program asdf beta char" => "asdf\nbeta\nchar\n",
-"$program abcd abc ab a" => "a\nab\nabc\nabcd\n",
-"$program zxcv '' qwer 1234 asdf" => "\n1234\nasdf\nqwer\nzxcv\n",
