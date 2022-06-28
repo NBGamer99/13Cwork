@@ -35,13 +35,12 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	int		i;
 	int		len;
 	char	*h;
-	char	*hh;
 
 	i = 0;
 	len = 0;
-	hh = (char *)malloc(1 * sizeof(char));
+	h = (char *)malloc(1 * sizeof(char));
 	if (size == 0)
-		return (hh);
+		return (h);
 	while (i < size)
 	{
 		len = len + ft_strlen(strs[i]);

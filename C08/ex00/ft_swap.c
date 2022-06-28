@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/23 18:38:28 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/28 01:13:22 by ynabouzi         ###   ########.fr       */
+/*   Created: 2022/06/12 13:26:24 by ynabouzi          #+#    #+#             */
+/*   Updated: 2022/06/13 21:24:17 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+void	ft_swap(int *a, int *b)
 {
-	write(1, &c, 1);
-}
+	int	temp;
 
-int	main(int ac, char **av)
-{
-	int	i;
-
-	(void)ac;
-	i = 0;
-	while (av[0][i] != '\0')
-	{
-		ft_putchar(av[0][i]);
-		i++;
-	}
-	
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }

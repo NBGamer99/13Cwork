@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ynabouzi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/23 18:38:28 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/28 01:13:22 by ynabouzi         ###   ########.fr       */
+/*   Created: 2022/06/09 01:28:21 by ynabouzi          #+#    #+#             */
+/*   Updated: 2022/06/09 19:32:06 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include<unistd.h>
 
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-}
-
-int	main(int ac, char **av)
-{
-	int	i;
-
-	(void)ac;
-	i = 0;
-	while (av[0][i] != '\0')
-	{
-		ft_putchar(av[0][i]);
-		i++;
-	}
-	
 }
