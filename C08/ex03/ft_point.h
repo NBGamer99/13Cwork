@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 21:22:57 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/13 21:59:45 by ynabouzi         ###   ########.fr       */
+/*   Created: 2022/06/29 18:06:58 by ynabouzi          #+#    #+#             */
+/*   Updated: 2022/06/29 22:06:50 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-void	ft_putstr(char *str)
+typedef struct t_point
 {
-	int	i;
-
-	i = -1;
-	while (*(str + ++i) != '\0')
-	{
-		write(1, (str + i), 1);
-	}
-}
+	int	x;
+	int	y;
+}		t_point;
+#endif

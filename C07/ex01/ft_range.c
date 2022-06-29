@@ -5,52 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/25 18:01:54 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/26 02:14:12 by ynabouzi         ###   ########.fr       */
+/*   Created: 2022/06/26 18:03:03 by ynabouzi          #+#    #+#             */
+/*   Updated: 2022/06/29 18:29:46 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
-int	*ft_range(int max, int min)
-{
-	int	direction;
-	int	*tab;
-	int	i;
-
-	direction = 0;
-	if (max < min)
-		direction = 1;
-	else
-		direction = -1;
-	tab = malloc(sizeof(int) * ((min - max) * direction));
-	i = 0;
-	while (i < (min - max) * direction)
-	{
-		tab[i] = max + i * direction;
-		i++;
-	}
-	return (tab);
-}
-
-int	main(void)
+int	*ft_range(int min, int max)
 {
 	int	i;
-	int	start;
-	int	end;
-	int	direction;
-	int	*tab;
+	int	*a;
 
+	if (min >= max)
+		return (NULL);
 	i = 0;
-	start = -5;
-	end = 10;
-	direction = 0;
-	direction = end > start ? 1 : -1;
-	tab = ft_range(start, end);
-	while (i < direction * (end - start))
+	a = malloc(sizeof(int) * (max - min));
+	if (a == NULL)
+		return (NULL);
+	while (i < (max - min))
 	{
-		printf(" ,%d", tab[i]);
+		a[i] = min + i;
 		i++;
 	}
+	return (a);
 }

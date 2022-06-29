@@ -1,4 +1,15 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/29 23:31:30 by ynabouzi          #+#    #+#             */
+/*   Updated: 2022/06/29 23:32:42 by ynabouzi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 char	ft_strlen(char *str)
@@ -9,6 +20,20 @@ char	ft_strlen(char *str)
 	while (str[i] != '\0')
 		i++;
 	return (i);
+}
+
+char	*ft_strcpy(char *dest, char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 
 char	*ft_strcat(char *dest, char *src)
@@ -32,46 +57,29 @@ char	*ft_strcat(char *dest, char *src)
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
+	char	*h;
 	int		i;
 	int		len;
-	char	*h;
 
 	i = 0;
 	len = 0;
-	h = (char *)malloc(1 * sizeof(char));
-	if (size == 0)
-		return (h);
 	while (i < size)
 	{
 		len = len + ft_strlen(strs[i]);
 		i++;
 	}
-	h = malloc(sizeof(char) * (len + ((size - 1) * (ft_strlen(sep))) + 1));
-	*h = '\0';
-	i = 0;
+	if (size > 0)
+		len = len + (size - 1) * ft_strlen(sep);
+	h = malloc(sizeof(char) * (len + 1));
+	if (!h)
+		return (NULL);
+	ft_strcpy(h, strs[0]);
+	i = 1;
 	while (i < size)
 	{
+		ft_strcat(h, sep);
 		ft_strcat(h, strs[i]);
-		if (i != size - 1)
-			ft_strcat(h, sep);
 		i++;
 	}
 	return (h);
-}
-
-int	main(void)
-{
-	char	**array;
-	char	*sep;
-
-	// char array[3][5] = {"Firs","Seco","Thir"};
-	array = (char **)malloc(sizeof(char *) * 3);
-	*array = (char *)malloc(sizeof(char) * 5);
-	array[0] = "firs";
-	array[1] = "seco";
-	array[2] = "thir";
-	sep = "+";
-	printf("%s",ft_strjoin(3, array, sep));
-	// printf("%d",ft_strlen(array[1]));
-	// printf("%s",array[0]);
 }
