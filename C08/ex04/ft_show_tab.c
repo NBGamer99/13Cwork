@@ -6,7 +6,7 @@
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 16:53:58 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/29 22:06:46 by ynabouzi         ###   ########.fr       */
+/*   Updated: 2022/06/30 02:37:35 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_show_tab(struct s_stock_str *par)
 	int	i;
 
 	i = 0;
-	while (par[i].srt != '\0')
+	while (par[i].str != '\0')
 	{
 		ft_putstr(par[i].str);
 		write(1, "\n", 1);
@@ -59,4 +59,14 @@ void	ft_show_tab(struct s_stock_str *par)
 		write(1, "\n", 1);
 		i++;
 	}
+}
+struct s_stock_str	*ft_strs_to_tab(int ac, char **av);
+
+int	main(void)
+{
+	char		*strs[] = {"Hadak", "Khona", "Rasso", "Kbir"};
+	t_stock_str	*stock;
+
+	stock = ft_strs_to_tab(4, strs);
+	ft_show_tab(stock);
 }
