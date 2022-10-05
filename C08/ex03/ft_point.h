@@ -6,14 +6,14 @@
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 18:06:58 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/29 22:06:50 by ynabouzi         ###   ########.fr       */
+/*   Updated: 2022/06/30 20:05:28 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_POINT_H
 # define FT_POINT_H
 
-typedef struct t_point
+typedef struct s_point
 {
 	int	x;
 	int	y;

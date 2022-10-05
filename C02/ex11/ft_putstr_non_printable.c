@@ -6,7 +6,7 @@
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:01:03 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/22 15:36:24 by ynabouzi         ###   ########.fr       */
+/*   Updated: 2022/06/30 20:33:02 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,8 @@ void	ft_putstr_non_printable(char *str)
 
 int main()
 {
-	char test[] = "Coucou\ntu vas bien \xf4?";
-	ft_putstr_non_printable(test);
-	// put_char("0123456789abcdef"[((unsigned char)'\200' / 16)]);
-	// put_char("0123456789abcdef"[((unsigned int)'\200' % 16)]);
-	// int i =
-	// printf("%d",(unsigned char)'\200');
+	// char test[] = "Coucou\ntu vas bien \xf4?";
+	ft_putstr_non_printable("asdf\x7f\x1fhi\x01\xfflol");
+// ==== check -e ====
+// $expected = 'asdf\\7f\\1fhi\\01\\fflol';
 }

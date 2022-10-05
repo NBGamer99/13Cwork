@@ -6,7 +6,7 @@
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 16:53:58 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/07/01 00:31:50 by ynabouzi         ###   ########.fr       */
+/*   Updated: 2022/07/01 00:33:18 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,4 @@ void	ft_show_tab(struct s_stock_str *par)
 		write(1, "\n", 1);
 		i++;
 	}
-}
-struct s_stock_str	*ft_strs_to_tab(int ac, char **av);
-
-int	main(void)
-{
-	// char		*strs[] = {"heamza"};
-	t_stock_str	*stock;
-
-	stock = ft_strs_to_tab(5, NULL);
-	ft_show_tab(stock);
 }

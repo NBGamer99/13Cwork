@@ -6,7 +6,7 @@
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 23:31:30 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/29 23:32:42 by ynabouzi         ###   ########.fr       */
+/*   Updated: 2022/06/30 18:51:33 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	h = malloc(sizeof(char) * (len + 1));
 	if (!h)
 		return (NULL);
-	ft_strcpy(h, strs[0]);
-	i = 1;
+	*h = '\0';
+	i = 0;
 	while (i < size)
 	{
 		ft_strcat(h, sep);
@@ -82,4 +82,12 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		i++;
 	}
 	return (h);
+}
+
+#include <stdio.h>
+
+int	main(void)
+{
+	char *str[3] = {"helldsa", "sad", "hello"};
+	printf("%s", ft_strjoin(3, str, "(-)"));
 }

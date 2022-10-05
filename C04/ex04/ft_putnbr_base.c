@@ -6,7 +6,7 @@
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 20:05:41 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/26 22:28:41 by ynabouzi         ###   ########.fr       */
+/*   Updated: 2022/06/30 21:00:26 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	ft_putnbr_base(int nbr, char *base)
 			put_char('-');
 			l = -l;
 		}
-		if (l > len)
+		if (l >= len)
 		{
 			ft_putnbr_base(l / len, base);
 			ft_putnbr_base(l % len, base);
@@ -97,8 +97,11 @@ int main()
 	int i = 0;
 	while (i < 99)
 	{
-		printf("\n  <====  %d",i);
+		// printf("\n  <====  %d",i);
+		//printf("\n");
 		ft_putnbr_base(i,base);
+		//printf("\n");
+		write(1, "\n", 1);
 		i++;
 	}
 

@@ -17,7 +17,8 @@ def convert_to_binary(decimal_number):
 
     return ''.join(binary_digits)
 for i in range(0,99):
-    #print(str(i)+"==> ",end=' ')
+    # print(str(i)+" ==> ",end=' ')
     if (i == 0):
         print(i, end='')
     print(convert_to_binary(i))
+    # print("\n")

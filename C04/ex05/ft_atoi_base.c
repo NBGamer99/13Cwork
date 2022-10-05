@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynabouzi <ynabouzi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 21:43:19 by ynabouzi          #+#    #+#             */
-/*   Updated: 2022/06/25 13:04:00 by ynabouzi         ###   ########.fr       */
+/*   Created: 2022/06/30 21:26:27 by ynabouzi          #+#    #+#             */
+/*   Updated: 2022/06/30 21:28:48 by ynabouzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,19 +85,16 @@ int	ft_atoi_base(char *str, char *base)
 	len_str = ft_strlen(str) - 1;
 	len_base = ulticheck(base);
 	num = 0;
-	minus_count = 0;
+	minus_count = 1;
 	while (str[j] == '-' || str[j] == '+')
 	{
 		if (str[j] == '-')
-			minus_count++;
+			minus_count = -minus_count;
 		j++;
 	}
-	if (minus_count % 2 != 0)
-		minus_count = -1;
 	while (len_str >= j && len_base > 1)
 	{
-		num = num + index_of(base, str[j]) * ft_pow(len_base, len_str);
-		len_str--;
+		num = num + index_of(base, str[j]) * ft_pow(len_base, len_str--);
 		j++;
 	}
 	return (num * minus_count);
@@ -111,10 +108,10 @@ int	main(void)
 	// printf("i = %d\n",i);
 	// while (i >= 0)
 	// {
-	// 	printf("%c",test[i]);
-	// 	i--;
+	//     printf("%c",test[i]);
+	//     i--;
 	// }
 	// printf("%d",ft_pow(5,-1));
-	printf("%d", ft_atoi_base("101", "01"));
+	printf("%d", ft_atoi_base("--10", "01"));
 	// printf("%d",ft_pow(3,4));
 }
